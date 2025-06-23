@@ -1,16 +1,12 @@
-import express from 'express';
 import dotenv from 'dotenv';
-import initDB from './src/config/db.js';
 dotenv.config();
-console.log(process.env.DB_NAME)
-console.log(process.env.DB_HOST)
-console.log(process.env.DB_PASSWORD)
-console.log(process.env.DB_DIALECT)
-console.log(process.env.DB_USER)
+import initDB from './src/config/db.js';
+import express from 'express';
+
 initDB();
 
 const app = express();
-const PORT = process.env.DB_HOST || 4001;
+const PORT = process.env.DB_HOST || 4000;
 
 app.get('/', (req, res) => res.json ({ok: 'true'}))
 app.use(express.json());
