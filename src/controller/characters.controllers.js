@@ -19,7 +19,10 @@ if (existingCharacter) {
         msg:"Solo puede ser male o female"
     })
   }
-  if(ki ){
+  if(ki < 0  ){ 
+    res.status(409).json({
+      msg : "el ki no puede ser menor a 0 ingrese el ki de 0 hacia arriba"
+        })
 
   }
   if(race !== saiyan ||race !== namekian ||race !== human ||race !== android ||race !== frieza-race || race !== god ||race !== jiren-race || race !== angel || race !== Nucleico-benigno ||race !== Nucleico || race !== evil) {
@@ -42,8 +45,8 @@ export const findALLcharacters = async (req, res) => {
 };
 export const updateCharacter = async (req, res) => {
   try {
-    const characters = await characters.update({name, ki, race, gender, description})
-    if(name, ki, gender, race === ''){
+ const { name, ki, race, gender, description } = req.body;
+    if({name},{ki} , {gender}, {race} == ''){
         res.status(409).json({
             msg:"no puedes dejar espacios en blanco para actualizar se necesitan datos validos"
         })
