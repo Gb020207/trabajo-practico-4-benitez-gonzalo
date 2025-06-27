@@ -171,37 +171,6 @@ export const createCharacter = async (req, res) => {
   }
 };
 
-// const existingCharacter = async (req, res) => {
-//   await Characters.findOne();
-//   if (existingCharacter) {
-//     res.status(409).json({
-//       msg: "Personaje ya existente",
-//     });
-//     if (ki < 0) {
-//       res.status(409).json({
-//         msg: "el ki no puede ser menor a 0 ingrese el ki de 0 hacia arriba",
-//       });
-//     }
-//     if (
-//       race !== saiyan ||
-//       race !== namekian ||
-//       race !== human ||
-//       race !== android ||
-//       race !== frieza - race ||
-//       race !== god ||
-//       race !== jiren - race ||
-//       race !== angel ||
-//       race !== Nucleico - benigno ||
-//       race !== Nucleico ||
-//       race !== evil
-//     ) {
-//       res.status(409).json({
-//         msg: "solo puedes colocar las razas existentes en el universo de dragon ball",
-//       });
-//     }
-//   }
-// };
-
 export const updateCharacter = async (req, res) => {
   try {
     const { name, ki, race, gender, description } = req.body;
