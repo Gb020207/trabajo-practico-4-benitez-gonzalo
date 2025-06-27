@@ -1,8 +1,9 @@
 import { DataTypes } from "sequelize";
-import sequelize from "./database.js";
+import sequelize from "../config/database.js";
 
-const characters = sequelize.define("Characters", {
-    id:{type: DataTypes.FLOAT, allowNull: false},
+
+const Characters = sequelize.define("Characters", {
+  id:{type: DataTypes.INTEGER,primaryKey: true, autoIncrement:true},
   name: { type: DataTypes.STRING(200), allowNull: false },
   ki: { type: DataTypes.FLOAT, allowNull: false },
   race: { type: DataTypes.STRING(30), allowNull: false },
@@ -10,4 +11,4 @@ const characters = sequelize.define("Characters", {
   description: { type: DataTypes.STRING },
 });
 
-export default characters;
+export default Characters;

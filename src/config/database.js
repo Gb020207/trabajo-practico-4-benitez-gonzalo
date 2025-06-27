@@ -12,7 +12,7 @@ const sequelize = new Sequelize(
     dialect: process.env.DB_DIALECT,
   }
 );
-import sequelize from "./database.js";
+
 
 export const initDB = async () => {
   try {

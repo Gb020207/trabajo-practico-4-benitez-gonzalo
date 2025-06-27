@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { createCharacter, findALLcharacters, updateCharacter,deleteCharacters } from '../controller/characters.controllers.js';
-const router = Router();
+import { createCharacter,findALLcharacters, updateCharacter,deleteCharacters } from '../controller/characters.controllers.js';
+const routerCharacters = Router();
 
-router.post('/', [], createCharacter);
-router.get('/:id', findALLcharacters);
-router.put('/characters/update/:id', updateCharacter);
-router.delete('/characters/delete/:id')
+routerCharacters.post('/characters', createCharacter);
+routerCharacters.get('/characters', findALLcharacters);
+routerCharacters.put('/characters/:id', updateCharacter);
+routerCharacters.delete('/characters/:id', deleteCharacters);
 
 
-export default router;
+export default routerCharacters;
